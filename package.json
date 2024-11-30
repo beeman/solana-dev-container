@@ -1,0 +1,23 @@
+{
+  "name": "solana-validator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:build": "docker buildx build --platform=linux/amd64 --load . -t ghcr.io/beeman/solana-dev-container:latest",
+    "docker:push": "docker push ghcr.io/beeman/solana-dev-container",
+    "docker:run": "docker run --rm -it -p 8899:8899 -p 8900:8900 --platform=linux/amd64 --name solana-docker-m1 ghcr.io/beeman/solana-dev-container",
+    "docker:run-sh": "docker run --rm -it --platform=linux/amd64 --name solana-docker-m1-sh --entrypoint bash ghcr.io/beeman/solana-dev-container"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beeman/solana-dev-container.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beeman/solana-dev-container/issues"
+  },
+  "homepage": "https://github.com/beeman/solana-dev-container#readme"
+}
